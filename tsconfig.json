@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Banner.jsx", "components/BannerBottom.jsx", "components/Header.jsx", "pages/post/[slug].jsx", "pages/_app.jsx", "pages/about.jsx", "pages/blog.jsx", "pages/index.jsx", "pages/contact.jsx", "pages/privacy.jsx"],
+  "exclude": ["node_modules"]
+}
