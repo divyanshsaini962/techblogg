@@ -17,7 +17,7 @@ const Footer = () => {
           <Image src={logoLight} width={200} height={200} alt="logo" />
           <p className="flex items-center text-sm font-titleFont gap-1">
             <AiOutlineCopyrightCircle className="mt-[1px]" />
-            Mr.Divyanshu Saini || all rights reserved 2023
+            Mr.Divyanshu Saini & <a href="https://www.linkedin.com/in/ashish-sharma-118400185/">Ashish Sharma</a> || all rights reserved 2023
           </p>
         </div>
 

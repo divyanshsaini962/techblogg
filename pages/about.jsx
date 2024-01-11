@@ -23,56 +23,29 @@ const About = () =>{
                 
                 <div className="w-full mx-auto p-5 bg-secondaryColor/10">
                     <h1 className='text-black text-5xl font-bold m-8'>About Us</h1>
-                    <h3 className='ml-8 text-lg'>Tech Blog service is dedicated to helping tech users of all experience levels 
-                        get more from the hardware and software that's central to a PC-centric 
-                        universe. We focus on:
-                        
-                        <li>Mainstream PCs</li>
-                        <li>Gaming PCs and accessories, graphics cards, and PC games</li>
-                        <li>The latest chips from Intel, AMD and Nvidia</li>
-                        <li>WiFi routers, SSDs, keyboards, mice and other PC components and accessories</li>
-                        <li>Windows, Office and other essential PC apps and utilities, from productivity to security</li>
-                        Tech Blog Service also covers all things Android, the one mobile ecosystem thats deep and customizable—just like a PC. 
-                        With incredible product knowledge built from years covering the consumer tech industry, PCWorld is uniquely
-                         positioned to tell savvy users what to buy and how to get more from their purchases.
+                    <h3 className='ml-8 text-lg'>TechBlog is a technology blog created by web developers Ashish Sharma and Divyansh Saini.
+                     We are two friends who share a passion for technology, writing, and building digital products.
+                     <p className=' text-lg mb-3'>In addition to writing tutorials and guides, we offer web 
+                     development services for clients looking to build custom websites and web apps. Our expertise is 
+                     in crafting modern frontends using React, Next.js, and Tailwind CSS. For the backend, we specialize
+                      in JavaScript and Node.js development.</p>
+                      <p className=' text-lg mb-3'>Some of the services we provide include:</p> 
+                        <li>- Building performant, SEO-optimized marketing websites</li>
+                        <li>- Developing web dashboards and admin portals</li>
+                        <li>- Integrating REST APIs and databases like MongoDB</li>
+                        <li>- Implementing content management with Sanity.io</li>
+                        <li>- Optimizing web apps for speed and scalability</li>
                         </h3>
-                    <h2 className='text-black text-3xl font-bold m-8'>Affiliate Disclosures</h2>
-                    <span className='text-gray-600 ml-8 font-bold'>FTC Disclosure Compliance Rules</span>
-                    <p className='ml-8 text-lg mb-3'>In 2015, the Federal Trade Commission released their new rules for Disclosure Compliance.</p>
-                    <p className='ml-8 text-lg mb-3'>These rules are set in place to ensure that readers or viewers of web media are aware if 
-                    the blogger or publisher is sponsored, endorsed, or partnered with a different company. 
-                    The readers need to know if the content publisher is making money by sharing a link or
-                    product.</p>
-                    <p className='ml-8 text-lg mb-3'>In compliance with the FTC guidelines, please assume the following about links and
-                         posts on this site:</p>
-                    <p className='ml-8 text-lg mb-3'>Any/all of the links on Tech Blog Service.in are affiliate links for which I receive a 
-                        small compensation from sales of certain items.</p>
-                    <h2 className='text-black text-3xl font-bold m-8'>What Are Affiliate Links?</h2>
-                    <p className='ml-8 text-lg mb-3'>Purchases are made on external affiliate company websites: when a reader clicks on an 
-                        affiliate link located on techblogservice.com to purchase an item, the reader buys the
-                        item from the seller directly (not from Tech Blog Service).</p>
-                    <p className='ml-8 text-lg mb-3'>Amazon and/or other companies pay Tech Blog Service a small commission or other compensation 
-                        for helping to bring customers to their website.</p>
-                    <p className='ml-8 text-lg mb-3'>Prices are exactly the same for readers whether they purchase
-                     is through an affiliate link or a non-affiliate link. Clicking an affiliate link and clicking
-                      a non-affiliate link does not change the price or anything else for the visitor.</p>
-                    <p className='text-gray-600 ml-8 font-bold'>Tech Blog Service uses two main types of affiliate programs:</p>
-                    <h3 className='text-black ml-8 font-bold mt-5'>1. Amazon affiliate links.</h3>
-                    <p className='ml-8 text-lg mb-3'>techblogservice.com is a participant in the Amazon Services LLC Associates Program, an 
-                        affiliate advertising program designed to provide a means for website owners to earn
-                         fees by linking to Amazon.in and affiliated sites, as well as to other websites that 
-                         may be affiliated with Amazon Service LLC Associates Program.</p>
-                    <h3 className='text-black ml-8 font-bold mt-5'>2. Product affiliate links.</h3>
-                    <p className='ml-8 text-lg mb-3'>If you click a product affiliate link and buy the product, then I will get a percentage of the sale or
-                         some other type of compensation.</p>
-                    <p className='ml-8 text-lg mb-3'>Again, prices are not different if you use these affiliate links. You will not pay more by 
-                        clicking through to the link. These links are not “pay per click.”</p>
-                    <span className='text-gray-600 ml-8 font-bold'>What about sponsored content?</span>
-                    <p className='ml-8 text-lg mb-3'>I do not write sponsored posts. I want to provide authentic, un-biased information. However, if a company 
-                        would like to publish sponsored content on Tech Blog Service, I will disclose this clearly in the beginning 
-                        of the post. The bottom line is that I only recommend products I use myself or that I would recommend
-                         to family and friends.</p>
-                    <p className='text-gray-600 ml-8 font-bold'>Your purchase helps support my research efforts. Thank you very, very much! I appreciate you!</p>
+                    <p className='ml-8 text-lg mb-3'>We take pride in our work and ensure that all our deliverables meet 
+                    the highest coding standards. Our focus is on translating your business requirements into a polished,
+                     functional web product that provides value to your users.</p>
+                    <p className='ml-8 text-lg mb-3'>When we're not coding for clients, you'll find us writing technical
+                     tutorials on the latest web technologies here on TechBlog. We enjoy sharing our knowledge with the 
+                     dev community!</p>
+                    <p className='ml-8 text-lg mb-3'>Let us know if you need help with any part of your digital presence, from web consulting to 
+                    development and design. We're passionate about using technology to grow businesses and can't wait 
+                    to work with you.</p>
+                    
 
                 </div>
         
