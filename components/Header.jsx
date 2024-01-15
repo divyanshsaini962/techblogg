@@ -1,6 +1,7 @@
 import { useState } from 'react';
 // import { navLinks } from './data';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import tempImg from "../public/images/user.png";
 import Link from "next/link";
 import logoDark from "../public/images/logoDark.png";
 import Image from "next/image";
@@ -47,6 +48,7 @@ export default function Navbar() {
                   ? session.user.image
                   : "https://www.noormohammad.live/static/media/roundedProfile.477a194221d255c8ce26.png"
               }
+              
               alt="logo"
             />
             <p className="text-sm font-semibold text-slate-600	">
