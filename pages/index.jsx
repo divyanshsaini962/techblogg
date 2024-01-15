@@ -19,6 +19,7 @@ function Home({posts}) {
     <div>
       <Head>
         <title>Tech Blog | Home</title>
+        <meta name="google-site-verification" content="google758691b40a024825.html" />
         <link rel="icon" href="/smallLogo.jpg" />
         <meta name="description" content="Tech Blog Service provides the latest news, reviews, and tips on tech 
            products and services. Read our expert blog posts to stay up-to-date on the newest gadgets,
