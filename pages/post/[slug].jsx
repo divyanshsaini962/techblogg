@@ -61,7 +61,8 @@ function Post({post}) {
           alt="cover-image" 
         />
       <div className="max-w-3xl mx-auto mb-10">
-        <article className="w-full mx-auto p-5 bg-secondaryColor/10">
+                                                  {/* Article start here code */}
+        <article className="w-full mx-auto p-8 md:p-6 bg-secondaryColor/10">
           <h1 className="font-titleFont font-medium text-[32px] text-primary border-b-[1px] border-b-cyan-800 mt-10 mb-3">
             {post.title}
           </h1>
@@ -77,7 +78,7 @@ function Post({post}) {
               alt="author-img" 
             />
 
-            <p className='font-bodyFont text-base'>
+            <p className='font-bodyFont md:text-base text-sm'>
               Blog post by <span className='font-bold text-seondaryColor'>
                 {post.author.name}
               </span> - Published at {new Date(post.publishedAt).toLocaleDateString()}
@@ -125,11 +126,11 @@ function Post({post}) {
               name="_id"
               value={post._id} 
             />
-
+                                     {/* Form started here code */}
             <form onSubmit={handleSubmit(onSubmit)} className="mt-7 flex flex-col">
 
               <label className='flex flex-col'>
-                <span className='font-titleFont font-semibold text-base'>Name</span>
+                <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Name</span>
                 
                 <input
                   {...register("name", { required: true })}
@@ -147,7 +148,7 @@ function Post({post}) {
               </label>
 
               <label className='flex flex-col'>
-                <span className='font-titleFont font-semibold text-base'>Email</span>
+                <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Email</span>
                 
                 <input
                   {...register("email", {required: true})}
@@ -165,7 +166,7 @@ function Post({post}) {
               </label>
               
               <label className='flex flex-col'>
-                <span className='font-titleFont font-semibold text-base'>Comment</span>
+                <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Comment</span>
                 
                 <textarea
                   {...register("comment", {required: true})}

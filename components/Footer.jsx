@@ -13,9 +13,9 @@ const Footer = () => {
   return (
     <div className="w-full py-10 bg-bgColor text-white/80 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-center items-center md:justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center flex-wrap gap-3">
           <Image src={logoLight} width={200} height={200} alt="logo" />
-          <p className="flex items-center text-sm font-titleFont gap-1">
+          <p className="flex items-center text-xs md:text-sm font-titleFont gap-1">
             <AiOutlineCopyrightCircle className="mt-[1px]" />
             Mr.Divyanshu Saini & <a href="https://www.linkedin.com/in/ashish-sharma-118400185/">Ashish Sharma</a> || all rights reserved 2023
           </p>

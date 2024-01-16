@@ -63,7 +63,7 @@ function Home({posts}) {
                  </div>
                  <div className="h-2/5 w-full flex flex-col justify-center">
                      <div className="flex justify-between item-center px-4 py-1 border-b-[1px] border-b-gray-500">
-                       <p className="font titleFont text-xl uppercase font-bold">{post.title}</p>
+                       <p className="font titleFont md:text-xl text-lg uppercase font-bold">{post.title.substring(0, 30)}...</p>
                        <img className="h-12 w-12 rounded-full object-cover" src={urlFor(post.author.image).url()} alt="author img" />
                        
                      </div>
