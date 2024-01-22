@@ -8,7 +8,6 @@ export default function Document() {
     <Html>
 
       <Head>
-      <meta name="google-site-verification" content="google758691b40a024825.html" />
       <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
