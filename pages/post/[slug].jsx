@@ -101,7 +101,7 @@ function Post({post}) {
                   <li className='ml04 list-disc'>{children}</li>
                 ),
                 link: ({href, children}) => (
-                  <a href={href} className='text-cyan-500 hover:underline'>
+                  <a href={href} target="_blank" className='text-cyan-500 hover:underline '>
                     {children}
                   </a>
                 )
