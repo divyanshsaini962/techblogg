@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { getServerSideSitemap } from 'next-sitemap';
+import { getServerSideSitemap } from 'next-sitemap'; 
 import { getServerSideProps } from 'next-sitemap';
 
 export async function getServerSideProps(context) {
