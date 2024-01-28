@@ -8,6 +8,9 @@ import {
   BsGithub,
 } from "react-icons/bs";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import { FaSquareBehance, FaXTwitter } from "react-icons/fa6";
+import { TbBrandFiverr } from "react-icons/tb";
+
 
 const Footer = () => {
   return (
@@ -17,16 +20,25 @@ const Footer = () => {
           <Image src={logoLight} width={200} height={200} alt="logo" />
           <p className="flex items-center text-xs md:text-sm font-titleFont gap-1">
             <AiOutlineCopyrightCircle className="mt-[1px]" />
-            Mr.Divyanshu Saini & <a href="https://www.linkedin.com/in/ashish-sharma-118400185/">Ashish Sharma</a> || all rights reserved 2023
+            <a target="_blank" href="https://www.linkedin.com/in/divyanshu-saini-8ab623231/">Mr.Divyanshu Saini</a> & <a target="_blank" href="https://www.linkedin.com/in/ashish-sharma-118400185/">Ashish Sharma</a> || all rights reserved 2023
           </p>
         </div>
 
         <div className="flex gap-6">
-          <BsYoutube className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
-          <BsFacebook className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
-          <BsGithub className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
+        <a target="_blank" href="https://www.behance.net/divyanshusaini1">
+          <FaSquareBehance className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
+         </a>
+         <a target="_blank" href="https://www.fiverr.com/users/divyanshusaini9/"> 
+          <TbBrandFiverr className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
+         </a>
+          <a target="_blank" href="https://github.com/divyanshsaini962">
+            <BsGithub className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" /></a>
+          <a target="_blank" href="https://www.linkedin.com/in/divyanshu-saini-8ab623231/">
           <BsLinkedin className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
-          <BsTwitter className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/divyanshu-saini-8ab623231/">
+          <FaXTwitter  className="w-6 h-6 text-white/50 hover:text-white duration-300 cursor-pointer" />
+          </a>
         </div>
       </div>
     </div>
