@@ -1,12 +1,15 @@
-import React from "react";
+import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "next/head";
-
-
-const Contact = () => {
+import { useForm, ValidationError } from '@formspree/react';
+function ContactForm() {
+  const [state, handleSubmit] = useForm("xrgnpkkk");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
   return (
-    <>
+  <>
     <Head>
       <title>Tech Blog | Contact Us</title>
       <link rel="icon" href="/smallLogo.jpg" />
@@ -18,10 +21,12 @@ const Contact = () => {
       <meta name="language" content="English"/>
     </Head>
     <Header />
-      <section className="bg-white py-10 overflow-hidden relative z-10">
-        <div className="container">
-          <div className="flex flex-wrap -mx-4 lg:justify-between">
-            <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+
+    <div className='w-full flex mt-8 flex-wrap'>
+      <div className='md:w-1/2 w-full'>
+      <div className="container">
+          <div className="flex flex-wrap mx-4 lg:justify-between">
+            <div className="w-full px-4 ">
               <div className="mb-12 max-w-[570px] lg:mb-0">
                 <span className="block mb-4 ml-8 text-base font-semibold text-primary">
                   Contact Us
@@ -94,88 +99,85 @@ const Contact = () => {
                       Email Address
                     </h4>
                     <p className="text-base ml-4 text-body-color">
-                      techblogservice@gmail.com
+                      techblogsservice@gmail.com
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-              <div className="relative p-8 mt-5 bg-secondaryColor/10 rounded-lg shadow-lg sm:p-12">
-                <form>
-                  <ContactInputBox
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                  />
-                  <ContactInputBox
-                    type="text"
-                    name="email"
-                    placeholder="Your Email"
-                  />
-                  <ContactInputBox
-                    type="text"
-                    name="phone"
-                    placeholder="Your Phone"
-                  />
-                  <ContactTextArea
-                    row="6"
-                    placeholder="Your Message"
-                    name="details"
-                    defaultValue=""
-                  />
-                  <div>
-                    <button
-                      type="submit"
-                      className="w-full p-3 text-white transition border rounded border-primary bg-red-600	hover:bg-opacity-90"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-                <div>
-                  
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-     {/* Footer */}
-     <Footer />
-    </>
-  );
-};
-
-export default Contact;
-
-const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
-  return (
-    <>
-      <div className="mb-6">
-        <textarea
-          rows={row}
-          placeholder={placeholder}
-          name={name}
-          className="border-[f0f0f0] w-full resize-none rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none"
-          defaultValue={defaultValue}
-        />
       </div>
-    </>
-  );
-};
-
-const ContactInputBox = ({ type, placeholder, name }) => {
-  return (
-    <>
-      <div className="mb-6">
-        <input
-          type={type}
-          placeholder={placeholder}
-          name={name}
-          className="border-[f0f0f0] w-full rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none"
-        />
       </div>
-    </>
+      <div className='md:w-1/2 w-full relative p-8  mt-5 bg-secondaryColor/10 rounded-lg shadow-lg sm:p-12 block'>
+      <form onSubmit={handleSubmit}>
+      <label className='flex flex-col mt-3'>
+          <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base '>Name</span>      
+            <input
+             id="name"
+             type="text" 
+             name="name"
+             />
+             <ValidationError 
+               prefix="Name" 
+               field="name"
+               errors={state.errors}
+             /> 
+      </label> 
+      <label className='flex flex-col mt-3'>
+          <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Phone</span>      
+            <input
+             id="phone"
+             type="number" 
+             name="phone"
+             />
+             <ValidationError 
+               prefix="Phone" 
+               field="phone"
+               errors={state.errors}
+             /> 
+      </label> 
+      <label className='flex flex-col mt-3'>
+          <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Email</span>      
+            <input
+             id="email"
+             type="email" 
+             name="email"
+             height={20}
+             />
+             <ValidationError 
+               prefix="Email" 
+               field="email"
+               errors={state.errors}
+             /> 
+      </label> 
+      <label className='flex flex-col mt-3'>
+          <span className='font-titleFont px-2 md:px-0 pt-1 font-semibold text-base'>Message</span>      
+            <input
+             id="message"
+             type="text" 
+             name="message"
+             />
+             <ValidationError 
+               prefix="Message" 
+               field="Message"
+               errors={state.errors}
+             /> 
+      </label> 
+      <button type="submit" className="w-full p-3 mt-8 text-white transition border rounded border-primary bg-red-600
+      	hover:bg-opacity-90" disabled={state.submitting}>
+        Submit
+      </button>
+    </form>
+    </div>
+  </div>
+  <Footer />
+</>  
   );
-};
+
+}
+function App() {
+  return (
+    <ContactForm />
+  );
+}
+export default App;
