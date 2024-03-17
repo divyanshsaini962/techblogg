@@ -13,6 +13,11 @@ const Privacy = () =>{
             <Head>
               <title>Tech Blog | Privacy</title>
               <link rel="icon" href="/smallLogo.jpg" />
+              {/* SEO meta tags */}
+              <meta name="description" content="Welcome to Tech Blog Service, your go-to destination for 100% original, thoroughly researched 
+              analyses on the latest technology trends, gadgets, apps, AI, robotics, gaming, and more. Our comprehensive evaluations, complete with photography and performance benchmarks, help you make informed buying decisions. Explore our unbiased reviews and insightful articles before your next tech purchase." />
+              <meta name="keywords" content="technology, tech reviews, gadgets, apps, AI, robotics, gaming, PC, laptops, smartphones, home tech, business tech, tech tips, how-to" />
+              <meta name="author" content="Divyanshu Saini"/>
             </Head>
 
             <Header />

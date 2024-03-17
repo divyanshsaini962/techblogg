@@ -19,12 +19,15 @@ import Link from "next/link";
 
 function Home({posts}) {
 
-    console.log(posts);
     return (
       <div>
         <Head>
           <title>My Blog | Explore the new horizon</title>
           <link rel="icon" href="/smallLogo.jpg" />
+          <meta name="author" content="Divyanshu Saini"/>
+          <meta name="description" content="Tech Blog Service features 100% original, thoroughly researched analyses on
+           the latest phones, computers, wearables, and smart home gadgets. We provide fully independent, unbiased hands-on testing and comparisons of tech gear so you can make informed buying decisions. Read our comprehensive evaluations complete with photography and performance benchmarks before your next tech purchase." />
+          <meta name="keywords" content="technology reviews, tech gadgets, smartphone reviews, laptop comparisons, gaming PCs, wearable technology, artificial intelligence, robotics advancements, smart home devices, tech tips, software updates, cybersecurity news, mobile apps reviews, tech industry trends, digital innovation"/>
         </Head>
   
         <main className="font-bodyFont">
