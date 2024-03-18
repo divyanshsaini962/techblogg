@@ -1,17 +1,35 @@
+import React, { useState } from 'react';
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
-import Banner from "../components/Banner";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { sanityClient, urlFor } from "../sanity";
 import Link from "next/link";
+import { sanityClient, urlFor } from "../sanity";
+import Header from "../components/Header";
+import Banner from "../components/Banner";
+import Footer from "../components/Footer";
+import Pagination from '../components/Pagination'
+
 
 function Home({ posts }) {
-  console.log(posts);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 9; // Number of posts to display per page
+
+  // Calculate total pages
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  // Calculate index of the first and last post on the current page
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Function to handle page changes
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div>
       <Head>
-        <title>Tech Blog | Home</title>
+      <title>Tech Blog | Home</title>
         <meta name="description" content="Tech Blog Service features 100% original, thoroughly researched analyses on the latest phones, computers, wearables and smart home gadgets. We provide fully independent, unbiased hands-on testing and comparisons of tech gear so you can make informed buying decisions. Read our comprehensive evaluations complete with photography and performance benchmarks before your next tech purchase" />
         <meta name="keywords" content="technology, tech reviews, gadgets, apps, AI, robotics, gaming, PC, laptops, smartphones, home tech, business tech, tech tips, how-to" />
         <meta name="author" content="Divyanshu Saini"/>
@@ -22,11 +40,11 @@ function Home({ posts }) {
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </Head>
 
-      <main className="font-bodyFont ">
+      <main className="font-bodyFont">
         <Header />
         <Banner />
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:gid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 py-6 px-4">
-          {posts.map((post) => (
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 py-6 px-4">
+          {currentPosts.map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
               <div className="border-[1px] border-secondaryColor border-opacity-40 h-[450px] group">
                 <div className="h-3/5 w-full overflow-hidden">
@@ -54,6 +72,12 @@ function Home({ posts }) {
             </Link>  
           ))}
         </div>
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange} // Make sure you pass onPageChange as a prop
+        />
         <Footer />
       </main>
     </div>
