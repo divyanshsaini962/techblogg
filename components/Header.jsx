@@ -1,13 +1,11 @@
 import { useState } from 'react';
-// import { navLinks } from './data';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import tempImg from "../public/images/user.png";
 import Link from "next/link";
 import logoDark from "../public/images/logoDark.png";
 import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { CgProfile } from "react-icons/cg";
 export default function Navbar() {
 
   const [open, setOpen] = useState(false);
@@ -15,12 +13,12 @@ export default function Navbar() {
   return (
     <Disclosure as="nav" className="bg-white shadow-lg  md:h-16">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
-        <div className="relative flex h-16 items-center justify-around">
+        <div className=" relative flex h-16 items-center justify-around">
           <div className="flex space-x-7">
             {/* Logo */}
             <Link href="/">
               <div>
-                <Image  width={180} height={200} src={logoDark} alt="logoDark" />
+                <Image  width={180} height={200} src={logoDark} alt="logoDark"/>
               </div>
             </Link>
 
@@ -40,36 +38,30 @@ export default function Navbar() {
           </div>
           {/* user login */}
           <div className="flex items-center gap-4 text-lg">
-            <div className="flex items-center gap-1">
-              <img
-                className="w-8 h-8 rounded-full"
-                src={
-                  session?.user?.image
-                    ? session.user.image
-                    : "https://www.noormohammad.live/static/media/roundedProfile.477a194221d255c8ce26.png"
-                }
-
-                alt="logo"
-              />
-              <p className="text-sm font-semibold text-slate-600">
-                {session?.user?.name || 'Hello Stranger'}
+             <div className="flex items-center gap-1">
+                {session && session.user ? (
+                  <img 
+                   className="w-8 h-8 rounded-full"
+                   src={session.user.image}
+                   alt='user image'
+                   />
+                   ) : (
+                  <CgProfile />
+                 )}
+               <p className="text-sm font-semibold text-slate-600">
+              {session?.user?.name || 'Hello Stranger'}
               </p>
-            </div>
-            {
-              session ? (<button onClick={() => signOut()}
-                className="uppercase text-xs text-slate-600 border-[1px] border-primaryColor hover:border-secondaryColor px-2 py-1 
-                font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
-                Sign Out
-              </button>
-              ) : (
-                <button onClick={() => signIn()}
-                className="uppercase w-auto text-xs text-slate-600 border-[1px] border-primaryColor hover:border-secondaryColor px-2 py-1 
-                  font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
-                  Sign In
-                </button>
-              )
-            }
-          </div>
+           </div>
+  {session ? (
+    <button onClick={() => signOut()} className="uppercase text-xs text-slate-600 border-[1px] border-primaryColor hover:border-secondaryColor px-2 py-1 font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
+      Sign Out
+    </button>
+  ) : (
+    <button onClick={() => signIn()} className="uppercase w-auto text-xs text-slate-600 border-[1px] border-primaryColor hover:border-secondaryColor px-2 py-1 font-semibold hover:text-white rounded-md hover:bg-secondaryColor transition-all duration-300 active:bg-yellow-600">
+      Sign In
+    </button>
+  )}
+</div>
 
           <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-cyan-700 
               hover:bg-secondaryColor hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white 

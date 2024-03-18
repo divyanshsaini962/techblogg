@@ -7,6 +7,7 @@ import { sanityClient, urlFor } from "../sanity";
 import Link from "next/link";
 
 function Home({ posts }) {
+  console.log(posts);
   return (
     <div>
       <Head>
