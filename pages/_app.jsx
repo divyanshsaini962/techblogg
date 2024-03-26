@@ -1,21 +1,19 @@
 import '../styles/globals.css';
-// import type { AppProps } from 'next/app';
-import {SessionProvider} from 'next-auth/react';
-import Head from "next/head";
+import { SessionProvider } from 'next-auth/react';
+import { Helmet } from 'react-helmet';
 
 function MyApp({ Component, pageProps:{session,...pageProps} }) {
-  let GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+  // ...
   return (
-    
-  <SessionProvider session={session}>
-    <Head>
-     <meta name="google-site-verification" content="google758691b40a024825.html" />
-    </Head>
-      <Component {...pageProps} />
-  </SessionProvider>
-  
+    <>
+      <SessionProvider session={session}>
+        <Helmet>
+          <meta name="google-site-verification" content="google758691b40a024825"/>
+        </Helmet>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </>
   );
 }
 
-
-export default MyApp
+export default MyApp;

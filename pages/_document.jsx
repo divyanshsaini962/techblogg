@@ -1,6 +1,8 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from 'next/script';
 
+
+
 export default function Document() {
   let GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
  
@@ -42,7 +44,7 @@ export default function Document() {
            Service to stay updated on new product launches and make smart purchasing decisions that get you the most 
            value" />
           <meta property="og:type" content="Blog Website"/>
-          <meta property="og:url" content="https://www.techblogservice.com/" />
+          <meta property="og:url" content="https://www.techblogservice.online/" />
           <meta property="og:image" content="/smallLogo.jpg" />  
         
       </Head>
