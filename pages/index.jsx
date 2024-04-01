@@ -7,12 +7,14 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Pagination from '../components/Pagination'
+import { Metadata } from 'next'
 
 
 function Home({ posts }) {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9; // Number of posts to display per page
 
+ 
   // Calculate total pages
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
@@ -34,7 +36,7 @@ function Home({ posts }) {
         <meta name="keywords" content="technology, tech reviews, gadgets, apps, AI, robotics, gaming, PC, laptops, smartphones, home tech, business tech, tech tips, how-to" />
         <meta name="author" content="Divyanshu Saini"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="language" content="en" /> {/* New meta tag for specifying the language */}
+        <meta name="language" content="en" /> 
         <link rel="icon" href="/smallLogo.jpg" />
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
