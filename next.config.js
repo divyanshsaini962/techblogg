@@ -1,18 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: ["cdn.sanity.io"],
-  },
   webpack: (config, { isServer }) => {
-    // Add XML loader
+    // Ignore XML files
     config.module.rules.push({
       test: /\.xml$/,
-      use: [
-        {
-          loader: 'xml-loader',
-        },
-      ],
+      loader: 'ignore-loader',
     });
 
     return config;
