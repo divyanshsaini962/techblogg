@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Pagination from '../components/Pagination'
-import { Metadata } from 'next'
+
 
 
 function Home({ posts }) {

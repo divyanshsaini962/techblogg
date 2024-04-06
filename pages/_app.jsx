@@ -1,15 +1,17 @@
 import '../styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
-import { Helmet } from 'react-helmet';
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps:{session,...pageProps} }) {
-  // ...
+  const router = useRouter();
+  const canonicalURL = `https://www.techblogservice.online${router.asPath}`;
   return (
     <>
       <SessionProvider session={session}>
-        <Helmet>
-          <meta name="google-site-verification" content="google758691b40a024825"/>
-        </Helmet>
+        <Head>
+        <link rel="canonical" href={canonicalURL} />
+        </Head>
         <Component {...pageProps} />
       </SessionProvider>
     </>
